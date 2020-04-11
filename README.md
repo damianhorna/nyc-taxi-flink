@@ -64,6 +64,6 @@ or
 
 ```
 java -cp /usr/local/kafka/libs/*:KafkaProducer.jar \
- com.example.bigdata.TestProducer data 15 testTopic \
+ com.example.bigdata.TestProducer data/yellow_tripdata_result 5 testTopic \
  0 localhost:9092
 ```
