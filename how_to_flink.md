@@ -13,3 +13,7 @@ Then
 
 And here you go, visit http://localhost:8081
 
+To stop the cluster:
+```
+./bin/stop-cluster.sh
+```
