@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="176eb075-f168-4421-b727-cfba6cbc6fb7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/flink-streaming/flink-streaming.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-streaming/src/SocketWindowWordCount.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-streaming/flink-streaming.iml" beforeDir="false" afterPath="$PROJECT_DIR$/flink-streaming/flink-streaming.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +50,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.SocketWindowWordCount">
     <configuration name="SlidingArrivalCount" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.dataartisans.flink_demo.examples.SlidingArrivalCount" />
       <module name="flink-streaming-demo" />
@@ -64,8 +65,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SocketWindowWordCount" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="SocketWindowWordCount" />
+      <module name="flink-streaming" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/flink-streaming" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.SlidingArrivalCount" />
+      <item itemvalue="Application.SocketWindowWordCount" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SocketWindowWordCount" />
         <item itemvalue="Application.SlidingArrivalCount" />
       </list>
     </recent_temporary>
@@ -85,7 +99,7 @@
       <workItem from="1586680095954" duration="1417000" />
       <workItem from="1586681521359" duration="882000" />
       <workItem from="1586682422842" duration="10816000" />
-      <workItem from="1586729743734" duration="508000" />
+      <workItem from="1586729743734" duration="793000" />
     </task>
     <servers />
   </component>
@@ -98,14 +112,22 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="2338" y="190" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586684308918">
+    <state x="2363" y="109" width="1024" height="845" key="#Project_Structure" timestamp="1586730467421">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2338" y="190" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586684308917" />
+    <state x="2363" y="109" width="1024" height="845" key="#Project_Structure/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586730467421" />
+    <state x="2338" y="190" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586730531199">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2338" y="190" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586730531199" />
     <state x="2565" y="334" width="620" height="396" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586647434748">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2565" y="334" width="620" height="396" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586647434748" />
+    <state x="2589" y="448" key="#com.intellij.framework.addSupport.AddSupportForSingleFrameworkDialog" timestamp="1586730418510">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2589" y="448" key="#com.intellij.framework.addSupport.AddSupportForSingleFrameworkDialog/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586730418510" />
     <state x="2714" y="344" width="435" height="490" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1586730205698">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -158,10 +180,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2466" y="336" width="878" height="507" key="NewModule_or_Project.wizard/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586729867088" />
-    <state x="2369" y="167" width="1024" height="845" key="SettingsEditor" timestamp="1586730228145">
+    <state x="2369" y="167" width="1024" height="845" key="SettingsEditor" timestamp="1586730479739">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2369" y="167" width="1024" height="845" key="SettingsEditor/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586730228145" />
+    <state x="2369" y="167" width="1024" height="845" key="SettingsEditor/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586730479739" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1586687329170">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
