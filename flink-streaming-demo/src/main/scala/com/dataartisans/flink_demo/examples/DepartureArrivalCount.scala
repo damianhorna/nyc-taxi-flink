@@ -1,19 +1,3 @@
-/*
- * Copyright 2015 data Artisans GmbH
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *  http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package com.dataartisans.flink_demo.examples
 
 import com.dataartisans.flink_demo.datatypes.{TaxiRide, GeoPoint}
@@ -27,20 +11,7 @@ import org.apache.flink.streaming.api.windowing.time.Time
 import org.apache.flink.streaming.api.windowing.windows.TimeWindow
 import org.apache.flink.util.Collector
 
-/**
- * Apache Flink DataStream API demo application.
- *
- * The program processes a stream of taxi ride events from the New York City Taxi and Limousine
- * Commission (TLC).
- * It computes every five minutes for each location the total number of persons that arrived
- * within the last 15 minutes by taxi.
- *
- * See
- *   http://github.com/dataartisans/flink-streaming-demo
- * for more detail.
- *
- */
-object SlidingArrivalCount {
+object DepartureArrivalCount {
 
   def main(args: Array[String]) {
 
@@ -55,8 +26,8 @@ object SlidingArrivalCount {
     val earlyCountThreshold = 50
 
     // Elasticsearch parameters
-    val writeToElasticsearch = true
-    val elasticsearchHost = "192.168.0.108"
+    val writeToElasticsearch = false // set to true to write results to Elasticsearch
+    val elasticsearchHost = "" // look-up hostname in Elasticsearch log output
     val elasticsearchPort = 9300
 
 
@@ -139,4 +110,3 @@ object SlidingArrivalCount {
   }
 
 }
-
