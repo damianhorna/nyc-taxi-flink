@@ -2,21 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="176eb075-f168-4421-b727-cfba6cbc6fb7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$$anon$2$$anon$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$$anon$2$$anonfun$createSerializer$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$$anon$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$$anonfun$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$$anonfun$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$WordWithCount$.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$WordWithCount.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kafka-producer/target/classes/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kafka-producer/target/classes/com/example/bigdata/TestProducer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-streaming/flink-streaming.iml" beforeDir="false" afterPath="$PROJECT_DIR$/flink-streaming/flink-streaming.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/how_to_flink.md" beforeDir="false" afterPath="$PROJECT_DIR$/how_to_flink.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka-producer/kafka-producer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-producer/kafka-producer.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-streaming/src/SocketWindowWordCount.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-streaming/src/SocketWindowWordCount.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$$anon$2$$anon$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$$anon$2$$anon$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$$anon$2$$anonfun$createSerializer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$$anon$2$$anonfun$createSerializer$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$$anon$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$$anon$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$$anonfun$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$$anonfun$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$$anonfun$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$.class" beforeDir="false" afterPath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$WordWithCount$.class" beforeDir="false" afterPath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$WordWithCount$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$WordWithCount.class" beforeDir="false" afterPath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$WordWithCount.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount.class" beforeDir="false" afterPath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +109,7 @@
       <workItem from="1586681521359" duration="882000" />
       <workItem from="1586682422842" duration="10816000" />
       <workItem from="1586729743734" duration="829000" />
-      <workItem from="1586730597508" duration="727000" />
+      <workItem from="1586730597508" duration="3022000" />
     </task>
     <servers />
   </component>
@@ -158,38 +154,38 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2663" y="290" width="424" height="484" key="FileChooserDialogImpl/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586729865954" />
-    <state width="937" height="280" key="GridCell.Tab.0.bottom" timestamp="1586731140922">
+    <state width="937" height="271" key="GridCell.Tab.0.bottom" timestamp="1586733120041">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="937" height="280" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586731140922" />
-    <state width="937" height="280" key="GridCell.Tab.0.center" timestamp="1586731140922">
+    <state width="937" height="271" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586733120041" />
+    <state width="937" height="271" key="GridCell.Tab.0.center" timestamp="1586733120040">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="937" height="280" key="GridCell.Tab.0.center/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586731140922" />
-    <state width="937" height="280" key="GridCell.Tab.0.left" timestamp="1586731140922">
+    <state width="937" height="271" key="GridCell.Tab.0.center/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586733120040" />
+    <state width="937" height="271" key="GridCell.Tab.0.left" timestamp="1586733120040">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="937" height="280" key="GridCell.Tab.0.left/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586731140922" />
-    <state width="937" height="280" key="GridCell.Tab.0.right" timestamp="1586731140922">
+    <state width="937" height="271" key="GridCell.Tab.0.left/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586733120040" />
+    <state width="937" height="271" key="GridCell.Tab.0.right" timestamp="1586733120040">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="937" height="280" key="GridCell.Tab.0.right/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586731140922" />
-    <state width="1874" height="365" key="GridCell.Tab.1.bottom" timestamp="1586729675705">
+    <state width="937" height="271" key="GridCell.Tab.0.right/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586733120040" />
+    <state width="937" height="271" key="GridCell.Tab.1.bottom" timestamp="1586733108405">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="365" key="GridCell.Tab.1.bottom/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586729675705" />
-    <state width="1874" height="365" key="GridCell.Tab.1.center" timestamp="1586729675705">
+    <state width="937" height="271" key="GridCell.Tab.1.bottom/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586733108405" />
+    <state width="937" height="271" key="GridCell.Tab.1.center" timestamp="1586733108405">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="365" key="GridCell.Tab.1.center/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586729675705" />
-    <state width="1874" height="365" key="GridCell.Tab.1.left" timestamp="1586729675705">
+    <state width="937" height="271" key="GridCell.Tab.1.center/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586733108405" />
+    <state width="937" height="271" key="GridCell.Tab.1.left" timestamp="1586733108405">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="365" key="GridCell.Tab.1.left/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586729675705" />
-    <state width="1874" height="365" key="GridCell.Tab.1.right" timestamp="1586729675705">
+    <state width="937" height="271" key="GridCell.Tab.1.left/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586733108405" />
+    <state width="937" height="271" key="GridCell.Tab.1.right" timestamp="1586733108405">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="365" key="GridCell.Tab.1.right/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586729675705" />
+    <state width="937" height="271" key="GridCell.Tab.1.right/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586733108405" />
     <state x="2466" y="336" width="878" height="507" key="NewModule_or_Project.wizard" timestamp="1586729867088">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -198,14 +194,18 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2369" y="167" width="1024" height="845" key="SettingsEditor/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586730911361" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1586687329170">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1586732977375">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586687329170" />
+    <state width="498" height="446" key="SwitcherDM/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586732977375" />
     <state x="2553" y="483" width="636" height="229" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1586730171488">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2553" y="483" width="636" height="229" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586730171488" />
+    <state x="2494" y="182" width="762" height="700" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1586732582764">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2494" y="182" width="762" height="700" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586732582764" />
     <state x="2189" y="134" width="1372" height="796" key="new project wizard" timestamp="1586729982722">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -230,6 +230,11 @@
           <url>file://$PROJECT_DIR$/flink-streaming-demo/src/main/scala/com/dataartisans/flink_demo/examples/SlidingArrivalCount.scala</url>
           <line>108</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/flink-streaming/src/SocketWindowWordCount.scala</url>
+          <line>33</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

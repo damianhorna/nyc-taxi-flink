@@ -15,9 +15,23 @@ import org.apache.flink.streaming.api.windowing.time.Time
  */
 object SocketWindowWordCount {
 
+  def read_csv(): Unit = {
+    var lookup = scala.collection.mutable.Map[String, Array[String]]()
+
+    println("Reading csv file")
+    val bufferedSource = io.Source.fromFile("/home/dhorna/dev/studies/mgr-sem1/bd/nyc-taxi-flink/data/taxi_zone_lookup.csv")
+    for (line <- bufferedSource.getLines) {
+      val Array(locationId, borough, zone, serviceZone)  = line.drop(1).split(",").map(_.trim)
+      // do whatever you want with the columns here
+      println(s"$locationId $borough $zone $serviceZone")
+    }
+    bufferedSource.close
+  }
+
   /** Main program method */
   def main(args: Array[String]) : Unit = {
 
+    read_csv()
     // the host and the port to connect to
     var hostname: String = "localhost"
     var port: Int = 0
