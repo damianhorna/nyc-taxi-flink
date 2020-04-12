@@ -2,9 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="176eb075-f168-4421-b727-cfba6cbc6fb7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/flink-streaming/src/SocketWindowWordCount.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$$anon$2$$anon$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$$anon$2$$anonfun$createSerializer$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$$anon$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$$anonfun$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$$anonfun$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$WordWithCount$.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$WordWithCount.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka-producer/target/classes/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka-producer/target/classes/com/example/bigdata/TestProducer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flink-streaming/flink-streaming.iml" beforeDir="false" afterPath="$PROJECT_DIR$/flink-streaming/flink-streaming.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/how_to_flink.md" beforeDir="false" afterPath="$PROJECT_DIR$/how_to_flink.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kafka-producer/kafka-producer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-producer/kafka-producer.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +80,7 @@
     <configuration name="SocketWindowWordCount" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="SocketWindowWordCount" />
       <module name="flink-streaming" />
+      <option name="PROGRAM_PARAMETERS" value="--port 9876" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/flink-streaming" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -99,7 +112,8 @@
       <workItem from="1586680095954" duration="1417000" />
       <workItem from="1586681521359" duration="882000" />
       <workItem from="1586682422842" duration="10816000" />
-      <workItem from="1586729743734" duration="793000" />
+      <workItem from="1586729743734" duration="829000" />
+      <workItem from="1586730597508" duration="727000" />
     </task>
     <servers />
   </component>
@@ -112,14 +126,14 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="2363" y="109" width="1024" height="845" key="#Project_Structure" timestamp="1586730467421">
+    <state x="2363" y="109" width="1024" height="845" key="#Project_Structure" timestamp="1586730840828">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2363" y="109" width="1024" height="845" key="#Project_Structure/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586730467421" />
-    <state x="2338" y="190" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586730531199">
+    <state x="2363" y="109" width="1024" height="845" key="#Project_Structure/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586730840828" />
+    <state x="2338" y="190" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586730992209">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2338" y="190" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586730531199" />
+    <state x="2338" y="190" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586730992209" />
     <state x="2565" y="334" width="620" height="396" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586647434748">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -144,22 +158,22 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2663" y="290" width="424" height="484" key="FileChooserDialogImpl/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586729865954" />
-    <state width="1874" height="365" key="GridCell.Tab.0.bottom" timestamp="1586729675704">
+    <state width="937" height="280" key="GridCell.Tab.0.bottom" timestamp="1586731140922">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="365" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586729675704" />
-    <state width="1874" height="365" key="GridCell.Tab.0.center" timestamp="1586729675704">
+    <state width="937" height="280" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586731140922" />
+    <state width="937" height="280" key="GridCell.Tab.0.center" timestamp="1586731140922">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="365" key="GridCell.Tab.0.center/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586729675704" />
-    <state width="1874" height="365" key="GridCell.Tab.0.left" timestamp="1586729675704">
+    <state width="937" height="280" key="GridCell.Tab.0.center/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586731140922" />
+    <state width="937" height="280" key="GridCell.Tab.0.left" timestamp="1586731140922">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="365" key="GridCell.Tab.0.left/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586729675704" />
-    <state width="1874" height="365" key="GridCell.Tab.0.right" timestamp="1586729675704">
+    <state width="937" height="280" key="GridCell.Tab.0.left/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586731140922" />
+    <state width="937" height="280" key="GridCell.Tab.0.right" timestamp="1586731140922">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="365" key="GridCell.Tab.0.right/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586729675704" />
+    <state width="937" height="280" key="GridCell.Tab.0.right/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586731140922" />
     <state width="1874" height="365" key="GridCell.Tab.1.bottom" timestamp="1586729675705">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -180,10 +194,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2466" y="336" width="878" height="507" key="NewModule_or_Project.wizard/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586729867088" />
-    <state x="2369" y="167" width="1024" height="845" key="SettingsEditor" timestamp="1586730479739">
+    <state x="2369" y="167" width="1024" height="845" key="SettingsEditor" timestamp="1586730911361">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2369" y="167" width="1024" height="845" key="SettingsEditor/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586730479739" />
+    <state x="2369" y="167" width="1024" height="845" key="SettingsEditor/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586730911361" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1586687329170">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>

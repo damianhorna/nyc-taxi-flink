@@ -17,3 +17,11 @@ To stop the cluster:
 ```
 ./bin/stop-cluster.sh
 ```
+
+To run simple word count:
+
+```
+nc -l 9876
+```
+
+And then run `SocketWindowWordCount.scala` from flink-streaming.
