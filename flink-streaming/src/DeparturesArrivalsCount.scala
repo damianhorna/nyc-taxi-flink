@@ -68,11 +68,11 @@ object DeparturesArrivalsCount {
     val wTaWTripEventsDS: DataStream[TripEvent] = tripEventsDS.
       assignTimestampsAndWatermarks(new BoundedOutOfOrdernessGenerator())
 
-    wTaWTripEventsDS.map(te => te.borough).print().setParallelism(1)
+//    wTaWTripEventsDS.map(te => te.borough).print().setParallelism(1)
     val finalDS = wTaWTripEventsDS.
       keyBy(te => te.borough).
-      keyBy(te => new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'").parse(te.timestamp).formatted("yyyy-MM-dd")).
-      window(TumblingProcessingTimeWindows.of(Time.minutes(1))).
+      keyBy(te => new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'").parse(te.timestamp).formatted("%tF")).
+      window(TumblingProcessingTimeWindows.of(Time.seconds(5))).
       aggregate(new MyAggFun)
 
     finalDS.map(mar => mar.borough).print().setParallelism(1)
