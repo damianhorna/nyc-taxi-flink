@@ -49,7 +49,7 @@ object SocketWindowWordCount {
     var text : DataStream[String] = env
       .addSource(new FlinkKafkaConsumer[String]("testTopic", new SimpleStringSchema(), properties))
 
-    text.rebalance.map(s => s).print()
+    text.rebalance.map(s => s).print().setParallelism(1)
 
     env.execute("Socket Window WordCount")
   }

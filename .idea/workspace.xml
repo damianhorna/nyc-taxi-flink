@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="176eb075-f168-4421-b727-cfba6cbc6fb7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_apache_flink_flink_connector_kafka_2_12_1_10_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$$anonfun$main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-streaming/flink-streaming.iml" beforeDir="false" afterPath="$PROJECT_DIR$/flink-streaming/flink-streaming.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flink-streaming/src/SocketWindowWordCount.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-streaming/src/SocketWindowWordCount.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$$anon$2$$anon$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$$anon$2$$anonfun$createSerializer$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$$anon$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$$anonfun$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$$anonfun$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$$anonfun$read_csv$1$$anonfun$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$$anonfun$read_csv$1$$anonfun$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$$anonfun$read_csv$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$$anonfun$read_csv$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$.class" beforeDir="false" afterPath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$WordWithCount$.class" beforeDir="false" afterPath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$WordWithCount$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$WordWithCount.class" beforeDir="false" afterPath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount$WordWithCount.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount.class" beforeDir="false" afterPath="$PROJECT_DIR$/flink-streaming/target/classes/SocketWindowWordCount.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/how_to_kafka.md" beforeDir="false" afterPath="$PROJECT_DIR$/how_to_kafka.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +100,7 @@
       <workItem from="1586681521359" duration="882000" />
       <workItem from="1586682422842" duration="10816000" />
       <workItem from="1586729743734" duration="829000" />
-      <workItem from="1586730597508" duration="6328000" />
+      <workItem from="1586730597508" duration="6564000" />
     </task>
     <servers />
   </component>
