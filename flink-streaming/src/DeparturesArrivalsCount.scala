@@ -20,9 +20,10 @@ object DeparturesArrivalsCount {
     println("Reading csv file")
     val bufferedSource = io.Source.fromFile("/home/dhorna/dev/studies/mgr-sem1/bd/nyc-taxi-flink/data/taxi_zone_lookup.csv")
     for (line <- bufferedSource.getLines) {
-      val Array(locationId, borough, zone, serviceZone) = line.drop(1).split(",").map(_.trim)
+      val Array(locationId, borough, zone, serviceZone) = line.split(",").map(_.trim)
       boroughLookup += (locationId -> (borough, zone, serviceZone))
     }
+    boroughLookup.-("LocationID")
     bufferedSource.close
     boroughLookup
   }
@@ -30,7 +31,7 @@ object DeparturesArrivalsCount {
   /** Main program method */
   def main(args: Array[String]): Unit = {
 
-    val lookup: mutable.Map[String, (_, _, _)] = read_csv()
+    val boroughLookup: mutable.Map[String, (_, _, _)] = read_csv()
     val no_of_retries = 3
 
     // get the execution environment
@@ -45,19 +46,19 @@ object DeparturesArrivalsCount {
     val text: DataStream[String] = env
       .addSource(new FlinkKafkaConsumer[String]("testTopic", new SimpleStringSchema(), properties))
 
-    //    text.rebalance.map(s => s).print().setParallelism(1)
+    text.print().setParallelism(1)
 
     val tripEventsDS: org.apache.flink.streaming.api.scala.DataStream[TripEvent] =
       text.filter(s => !s.startsWith("event_type")).
         map(_.split(",")).
         filter(_.length == 9).
-        filter(arr => lookup.keySet.contains(arr(3))).
+        filter(arr => boroughLookup.keySet.contains(arr(3))).
         map(arr => TripEvent(
           arr(0).toInt,
           arr(1).toInt,
           arr(2),
           arr(3).toInt,
-          lookup(arr(3))._1.toString,
+          boroughLookup(arr(3))._1.toString,
           arr(4).toInt,
           arr(5).toDouble,
           arr(6).toInt,
@@ -68,23 +69,13 @@ object DeparturesArrivalsCount {
     val wTaWTripEventsDS: DataStream[TripEvent] = tripEventsDS.
       assignTimestampsAndWatermarks(new BoundedOutOfOrdernessGenerator())
 
-    //    wTaWTripEventsDS.map(te => te.borough).print().setParallelism(1)
+    wTaWTripEventsDS.print().setParallelism(1)
     val finalDS = wTaWTripEventsDS.
-      keyBy(te => te.borough).
-      keyBy(te => new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'").parse(te.timestamp).formatted("%tF")).
-      window(TumblingProcessingTimeWindows.of(Time.seconds(5))).
+      keyBy(te => te.borough + new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'").parse(te.timestamp).formatted("%tF")).
+      window(TumblingProcessingTimeWindows.of(Time.seconds(3))).
       aggregate(new MyAggFun)
 
-    finalDS.map(mar => (
-      mar.hour,
-      mar.borough,
-      mar.day,
-      mar.arrivals_count,
-      mar.departures_count,
-      mar.arriving_ppl_count,
-      mar.departing_ppl_count)).
-      print().
-      setParallelism(1)
+//    finalDS.print().setParallelism(1)
 
     env.execute("Socket Window WordCount")
   }
