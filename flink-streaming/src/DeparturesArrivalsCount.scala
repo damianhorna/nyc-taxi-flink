@@ -46,7 +46,7 @@ object DeparturesArrivalsCount {
     val text: DataStream[String] = env
       .addSource(new FlinkKafkaConsumer[String]("testTopic", new SimpleStringSchema(), properties))
 
-    text.print().setParallelism(1)
+//    text.print().setParallelism(1)
 
     val tripEventsDS: org.apache.flink.streaming.api.scala.DataStream[TripEvent] =
       text.filter(s => !s.startsWith("event_type")).
@@ -69,13 +69,13 @@ object DeparturesArrivalsCount {
     val wTaWTripEventsDS: DataStream[TripEvent] = tripEventsDS.
       assignTimestampsAndWatermarks(new BoundedOutOfOrdernessGenerator())
 
-    wTaWTripEventsDS.print().setParallelism(1)
+//    wTaWTripEventsDS.print().setParallelism(1)
     val finalDS = wTaWTripEventsDS.
       keyBy(te => te.borough + new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'").parse(te.timestamp).formatted("%tF")).
       window(TumblingProcessingTimeWindows.of(Time.seconds(3))).
       aggregate(new MyAggFun)
 
-//    finalDS.print().setParallelism(1)
+    finalDS.print().setParallelism(1)
 
     env.execute("Socket Window WordCount")
   }
