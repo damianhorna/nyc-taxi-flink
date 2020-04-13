@@ -1,6 +1,12 @@
+import java.util.Properties
+
+import org.apache.flink.api.common.serialization.SimpleStringSchema
 import org.apache.flink.api.java.utils.ParameterTool
 import org.apache.flink.streaming.api.scala._
 import org.apache.flink.streaming.api.windowing.time.Time
+import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer
+
+import scala.collection.mutable
 
 /**
  * Implements a streaming windowed version of the "WordCount" program.
@@ -15,58 +21,35 @@ import org.apache.flink.streaming.api.windowing.time.Time
  */
 object SocketWindowWordCount {
 
-  def read_csv(): Unit = {
-    var lookup = scala.collection.mutable.Map[String, Array[String]]()
+  def read_csv(): mutable.Map[String, (_, _, _)] = {
+    var lookup = mutable.Map[String, (_, _, _)]()
 
     println("Reading csv file")
     val bufferedSource = io.Source.fromFile("/home/dhorna/dev/studies/mgr-sem1/bd/nyc-taxi-flink/data/taxi_zone_lookup.csv")
     for (line <- bufferedSource.getLines) {
       val Array(locationId, borough, zone, serviceZone)  = line.drop(1).split(",").map(_.trim)
-      // do whatever you want with the columns here
-      println(s"$locationId $borough $zone $serviceZone")
+      lookup += (locationId -> (borough, zone, serviceZone))
     }
     bufferedSource.close
+    lookup
   }
 
   /** Main program method */
   def main(args: Array[String]) : Unit = {
 
-    read_csv()
-    // the host and the port to connect to
-    var hostname: String = "localhost"
-    var port: Int = 0
-
-    try {
-      val params = ParameterTool.fromArgs(args)
-      hostname = if (params.has("hostname")) params.get("hostname") else "localhost"
-      port = params.getInt("port")
-    } catch {
-      case e: Exception => {
-        System.err.println("No port specified. Please run 'SocketWindowWordCount " +
-          "--hostname <hostname> --port <port>', where hostname (localhost by default) and port " +
-          "is the address of the text server")
-        System.err.println("To start a simple text server, run 'netcat -l <port>' " +
-          "and type the input text into the command line")
-        return
-      }
-    }
+    var lookup = read_csv()
 
     // get the execution environment
     val env: StreamExecutionEnvironment = StreamExecutionEnvironment.getExecutionEnvironment
 
-    // get input data by connecting to the socket
-    val text: DataStream[String] = env.socketTextStream(hostname, port, '\n')
+    val properties = new Properties()
+    properties.setProperty("bootstrap.servers", "localhost:9092")
+    properties.setProperty("group.id", "testGroup")
 
-    // parse the data, group it, window it, and aggregate the counts
-    val windowCounts = text
-      .flatMap { w => w.split("\\s") }
-      .map { w => WordWithCount(w, 1) }
-      .keyBy("word")
-      .timeWindow(Time.seconds(5))
-      .sum("count")
+    var text : DataStream[String] = env
+      .addSource(new FlinkKafkaConsumer[String]("testTopic", new SimpleStringSchema(), properties))
 
-    // print the results with a single thread, rather than in parallel
-    windowCounts.print().setParallelism(1)
+    text.rebalance.map(s => s).print()
 
     env.execute("Socket Window WordCount")
   }

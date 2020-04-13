@@ -45,7 +45,7 @@ bin/kafka-topics.sh --create --zookeeper localhost:2181 \
 ### Run kafka producer
 ```
 java -cp /usr/lib/kafka/libs/*:KafkaProducer.jar \
- com.example.bigdata.TestProducer data 15 testTopic \
+ com.example.bigdata.TestProducer data/toy 15 testTopic \
  0 localhost:9092
 ```
 

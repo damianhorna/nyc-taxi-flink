@@ -13,5 +13,6 @@
     <orderEntry type="library" name="org.apache.flink:flink-core:1.10.0" level="project" />
     <orderEntry type="library" name="org.apache.flink:flink-streaming-scala_2.11:1.10.0" level="project" />
     <orderEntry type="library" name="scala-sdk-2.11.8" level="application" />
+    <orderEntry type="library" name="org.apache.flink:flink-connector-kafka_2.12:1.10.0" level="project" />
   </component>
 </module>
