@@ -1,6 +1,7 @@
 import scala.math.max
 import java.text.SimpleDateFormat
 
+import datatypes.TripEvent
 import org.apache.flink.streaming.api.functions.AssignerWithPeriodicWatermarks
 import org.apache.flink.streaming.api.watermark.Watermark
 

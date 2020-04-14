@@ -1,3 +1,4 @@
+import datatypes.DeparturesArrivalsAggResult
 import org.apache.flink.api.common.state.{ValueState, ValueStateDescriptor}
 import org.apache.flink.configuration.Configuration
 import org.apache.flink.streaming.api.functions.KeyedProcessFunction
@@ -13,10 +14,10 @@ class StatefulAccumulationKeyedProcessFun extends KeyedProcessFunction[String, D
 
   override def processElement(i: DeparturesArrivalsAggResult, context: KeyedProcessFunction[String, DeparturesArrivalsAggResult, DeparturesArrivalsAggResult]#Context, collector: Collector[DeparturesArrivalsAggResult]): Unit = {
 
-    val new_arrivals_count = g_arrivals_count.value + i.arrivals_count.toInt
-    val new_departures_count = g_departures_count.value + i.departures_count.toInt
-    val new_arriving_ppl_count = g_arriving_ppl_count.value + i.arriving_ppl_count.toInt
-    val new_departing_ppl_count = g_departing_ppl_count.value + i.departing_ppl_count.toInt
+    val new_arrivals_count = g_arrivals_count.value + i.arrivalsCnt.toInt
+    val new_departures_count = g_departures_count.value + i.departuresCnt.toInt
+    val new_arriving_ppl_count = g_arriving_ppl_count.value + i.arrivingPeopleCnt.toInt
+    val new_departing_ppl_count = g_departing_ppl_count.value + i.departingPeopleCnt.toInt
 
     g_arrivals_count.update(new_arrivals_count)
     g_departures_count.update(new_departures_count)

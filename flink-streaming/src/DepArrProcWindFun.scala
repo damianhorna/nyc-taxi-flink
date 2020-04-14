@@ -1,6 +1,7 @@
 import java.text.SimpleDateFormat
 import java.util.Date
 
+import datatypes.{DeparturesArrivalsAggResult, TripEvent}
 import org.apache.flink.streaming.api.scala.function.ProcessWindowFunction
 import org.apache.flink.streaming.api.windowing.windows.TimeWindow
 import org.apache.flink.util.Collector
@@ -16,12 +17,12 @@ class DepArrProcWindFun extends ProcessWindowFunction[TripEvent, DeparturesArriv
     var depPplCnt = 0
 
     for( el <- elements){
-      if (el.start_stop == 0){
+      if (el.startStop == 0){
         depCnt += 1
-        depPplCnt += el.passenger_count
+        depPplCnt += el.passengerCount
       } else {
         arrCnt += 1
-        arrPplCnt += el.passenger_count
+        arrPplCnt += el.passengerCount
       }
     }
 
