@@ -5,7 +5,7 @@ import org.apache.flink.api.common.restartstrategy.RestartStrategies
 import org.apache.flink.api.common.serialization.SimpleStringSchema
 import org.apache.flink.streaming.api.TimeCharacteristic
 import org.apache.flink.streaming.api.scala._
-import org.apache.flink.streaming.api.windowing.assigners.TumblingEventTimeWindows
+import org.apache.flink.streaming.api.windowing.assigners.{SlidingEventTimeWindows, TumblingEventTimeWindows}
 import org.apache.flink.streaming.api.windowing.time.Time
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer
 
@@ -32,6 +32,8 @@ object DeparturesArrivalsCount {
 
     val boroughLookup: mutable.Map[String, (_, _, _)] = read_csv()
     val no_of_retries = 3
+    val D = args(1)
+    val L = args(3)
 
     // get the execution environment
     val env: StreamExecutionEnvironment = StreamExecutionEnvironment.getExecutionEnvironment
@@ -71,13 +73,24 @@ object DeparturesArrivalsCount {
 
     //    wTaWTripEventsDS.print().setParallelism(1)
     val finalDS: DataStream[DeparturesArrivalsAggResult] = wTaWTripEventsDS.
-      keyBy(te => te.borough + te.day).
+      keyBy(te => te.borough +":"+ te.day).
       window(TumblingEventTimeWindows.of(Time.hours(1))).
-      aggregate(new DeparturesArrivalsAggFun).
+      process(new DepArrProcWindFun).
       keyBy(mar => mar.borough + mar.day).
       process(new StatefulAccumulationKeyedProcessFun)
 
     finalDS.print().setParallelism(1)
+
+//    val anomalyDS =  wTaWTripEventsDS.
+//      keyBy(te => te.borough + te.day).
+//      window(TumblingEventTimeWindows.of(Time.hours(1))).
+//      aggregate(new DeparturesArrivalsAggFun).
+//      keyBy(mar => mar.borough).
+//      window(SlidingEventTimeWindows.of(Time.hours(D.toInt), Time.hours(1))).
+//      process(new AnomalyProcessWindowFun)
+//
+//    anomalyDS.print().setParallelism(1)
+
 
     env.execute("Socket Window WordCount")
   }

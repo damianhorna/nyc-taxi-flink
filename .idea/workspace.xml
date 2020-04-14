@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="176eb075-f168-4421-b727-cfba6cbc6fb7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/flink-streaming/src/TripEvent.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-streaming/src/TripEvent.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-streaming/src/AnomalyAggResult.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-streaming/src/AnomalyProcessWindowFun.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-streaming/src/DepArrProcWindFun.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-streaming/src/DeparturesArrivalsCount.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-streaming/src/DeparturesArrivalsCount.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +71,7 @@
     <configuration name="SocketWindowWordCount" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="DeparturesArrivalsCount" />
       <module name="flink-streaming" />
-      <option name="PROGRAM_PARAMETERS" value="--port 9876" />
+      <option name="PROGRAM_PARAMETERS" value="--D 4 --L 10000" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/flink-streaming" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -101,7 +105,7 @@
       <workItem from="1586682422842" duration="10816000" />
       <workItem from="1586729743734" duration="829000" />
       <workItem from="1586730597508" duration="11195000" />
-      <workItem from="1586774515198" duration="35370000" />
+      <workItem from="1586774515198" duration="43022000" />
     </task>
     <servers />
   </component>
@@ -118,10 +122,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2363" y="109" width="1024" height="845" key="#Project_Structure/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586730840828" />
-    <state x="2338" y="190" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586730992209">
+    <state x="2338" y="190" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586845153499">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2338" y="190" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586730992209" />
+    <state x="2338" y="190" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586845153499" />
     <state x="2565" y="334" width="620" height="396" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586797781251">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -130,10 +134,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2589" y="448" key="#com.intellij.framework.addSupport.AddSupportForSingleFrameworkDialog/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586730418510" />
-    <state x="2688" y="239" width="368" height="585" key="#com.intellij.ide.util.MemberChooser" timestamp="1586821400525">
+    <state x="2688" y="239" width="368" height="585" key="#com.intellij.ide.util.MemberChooser" timestamp="1586850460849">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2688" y="239" width="368" height="585" key="#com.intellij.ide.util.MemberChooser/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586821400525" />
+    <state x="2688" y="239" width="368" height="585" key="#com.intellij.ide.util.MemberChooser/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586850460849" />
     <state x="2714" y="344" width="439" height="490" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1586763618538">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -142,46 +146,46 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2614" y="347" width="524" height="484" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586763620104" />
-    <state x="2638" y="276" width="863" height="536" key="#xdebugger.evaluate" timestamp="1586802334146">
+    <state x="2638" y="276" width="863" height="536" key="#xdebugger.evaluate" timestamp="1586845180310">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2638" y="276" width="863" height="536" key="#xdebugger.evaluate/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586802334146" />
+    <state x="2638" y="276" width="863" height="536" key="#xdebugger.evaluate/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586845180310" />
     <state x="2663" y="290" width="424" height="484" key="FileChooserDialogImpl" timestamp="1586729865954">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2663" y="290" width="424" height="484" key="FileChooserDialogImpl/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586729865954" />
-    <state width="932" height="320" key="GridCell.Tab.0.bottom" timestamp="1586824446534">
+    <state width="932" height="423" key="GridCell.Tab.0.bottom" timestamp="1586851232056">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="932" height="320" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586824446534" />
-    <state width="932" height="320" key="GridCell.Tab.0.center" timestamp="1586824446534">
+    <state width="932" height="423" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586851232056" />
+    <state width="932" height="423" key="GridCell.Tab.0.center" timestamp="1586851232056">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="932" height="320" key="GridCell.Tab.0.center/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586824446534" />
-    <state width="932" height="320" key="GridCell.Tab.0.left" timestamp="1586824446534">
+    <state width="932" height="423" key="GridCell.Tab.0.center/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586851232056" />
+    <state width="932" height="423" key="GridCell.Tab.0.left" timestamp="1586851232055">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="932" height="320" key="GridCell.Tab.0.left/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586824446534" />
-    <state width="932" height="320" key="GridCell.Tab.0.right" timestamp="1586824446534">
+    <state width="932" height="423" key="GridCell.Tab.0.left/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586851232055" />
+    <state width="932" height="423" key="GridCell.Tab.0.right" timestamp="1586851232056">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="932" height="320" key="GridCell.Tab.0.right/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586824446534" />
-    <state width="937" height="260" key="GridCell.Tab.1.bottom" timestamp="1586802531536">
+    <state width="932" height="423" key="GridCell.Tab.0.right/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586851232056" />
+    <state width="937" height="260" key="GridCell.Tab.1.bottom" timestamp="1586850397629">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="937" height="260" key="GridCell.Tab.1.bottom/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586802531536" />
-    <state width="937" height="260" key="GridCell.Tab.1.center" timestamp="1586802531536">
+    <state width="937" height="260" key="GridCell.Tab.1.bottom/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586850397629" />
+    <state width="937" height="260" key="GridCell.Tab.1.center" timestamp="1586850397629">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="937" height="260" key="GridCell.Tab.1.center/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586802531536" />
-    <state width="937" height="260" key="GridCell.Tab.1.left" timestamp="1586802531536">
+    <state width="937" height="260" key="GridCell.Tab.1.center/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586850397629" />
+    <state width="937" height="260" key="GridCell.Tab.1.left" timestamp="1586850397629">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="937" height="260" key="GridCell.Tab.1.left/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586802531536" />
-    <state width="937" height="260" key="GridCell.Tab.1.right" timestamp="1586802531536">
+    <state width="937" height="260" key="GridCell.Tab.1.left/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586850397629" />
+    <state width="937" height="260" key="GridCell.Tab.1.right" timestamp="1586850397629">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="937" height="260" key="GridCell.Tab.1.right/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586802531536" />
+    <state width="937" height="260" key="GridCell.Tab.1.right/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586850397629" />
     <state x="2466" y="336" width="878" height="507" key="NewModule_or_Project.wizard" timestamp="1586729867088">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -190,10 +194,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2369" y="167" width="1024" height="845" key="SettingsEditor/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586802045895" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1586824553978">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1586850559306">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586824553978" />
+    <state width="498" height="446" key="SwitcherDM/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586850559306" />
     <state x="2553" y="483" width="636" height="229" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1586763610913">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -206,14 +210,18 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2651" y="447" width="448" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586820254373" />
+    <state x="2571" y="273" width="676" height="518" key="find.popup" timestamp="1586824658435">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2571" y="273" width="676" height="518" key="find.popup/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586824658435" />
     <state x="2189" y="134" width="1372" height="796" key="new project wizard" timestamp="1586729982722">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2189" y="134" width="1372" height="796" key="new project wizard/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586729982722" />
-    <state x="2529" y="251" width="700" height="530" key="recent.locations.popup" timestamp="1586815126543">
+    <state x="2529" y="251" width="700" height="530" key="recent.locations.popup" timestamp="1586846657253">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2529" y="251" width="700" height="530" key="recent.locations.popup/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586815126543" />
+    <state x="2529" y="251" width="700" height="530" key="recent.locations.popup/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586846657253" />
     <state x="2544" y="243" width="672" height="677" key="run.anything.popup" timestamp="1586791002041">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -233,7 +241,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/flink-streaming/src/DeparturesArrivalsCount.scala</url>
-          <line>67</line>
+          <line>70</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
