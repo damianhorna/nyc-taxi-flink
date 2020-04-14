@@ -1,4 +1,4 @@
-case class MyAggResult (
+case class DeparturesArrivalsAggResult(
                        hour: String,
                        borough: String,
                        day: String,

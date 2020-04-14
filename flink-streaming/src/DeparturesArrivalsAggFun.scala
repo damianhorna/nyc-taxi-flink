@@ -2,15 +2,15 @@ import java.text.SimpleDateFormat
 
 import org.apache.flink.api.common.functions.AggregateFunction
 
-class MyAggFun extends AggregateFunction[
+class DeparturesArrivalsAggFun extends AggregateFunction[
   TripEvent,
-  MyAggResult,
-  MyAggResult] {
-  override def createAccumulator(): MyAggResult = MyAggResult("", "", "", 0, 0, 0, 0)
+  DeparturesArrivalsAggResult,
+  DeparturesArrivalsAggResult] {
+  override def createAccumulator(): DeparturesArrivalsAggResult = DeparturesArrivalsAggResult("", "", "", 0, 0, 0, 0)
 
   override def add(value: TripEvent,
-                   accumulator: MyAggResult): MyAggResult =
-    MyAggResult(
+                   accumulator: DeparturesArrivalsAggResult): DeparturesArrivalsAggResult =
+    DeparturesArrivalsAggResult(
       if (accumulator.hour.isEmpty) new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'").
         parse(value.timestamp).
         formatted("%tk") else accumulator.hour,
@@ -22,13 +22,13 @@ class MyAggFun extends AggregateFunction[
       if (value.start_stop == 0) accumulator.departing_ppl_count + value.passenger_count else accumulator.departing_ppl_count
     )
 
-  override def getResult(accumulator: MyAggResult): MyAggResult = {
+  override def getResult(accumulator: DeparturesArrivalsAggResult): DeparturesArrivalsAggResult = {
     accumulator
   }
 
-  override def merge(a: MyAggResult,
-                     b: MyAggResult): MyAggResult =
-    MyAggResult(
+  override def merge(a: DeparturesArrivalsAggResult,
+                     b: DeparturesArrivalsAggResult): DeparturesArrivalsAggResult =
+    DeparturesArrivalsAggResult(
       a.hour,
       a.borough,
       a.day,

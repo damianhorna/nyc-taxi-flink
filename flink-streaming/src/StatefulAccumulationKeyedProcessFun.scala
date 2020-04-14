@@ -4,14 +4,14 @@ import org.apache.flink.streaming.api.functions.KeyedProcessFunction
 import org.apache.flink.streaming.api.scala._
 import org.apache.flink.util.Collector
 
-class MyProcessFunction extends KeyedProcessFunction[String, MyAggResult, MyAggResult] {
+class StatefulAccumulationKeyedProcessFun extends KeyedProcessFunction[String, DeparturesArrivalsAggResult, DeparturesArrivalsAggResult] {
 
   private var g_arrivals_count: ValueState[Int] = _
   private var g_departures_count: ValueState[Int] = _
   private var g_arriving_ppl_count: ValueState[Int] = _
   private var g_departing_ppl_count: ValueState[Int] = _
 
-  override def processElement(i: MyAggResult, context: KeyedProcessFunction[String, MyAggResult, MyAggResult]#Context, collector: Collector[MyAggResult]): Unit = {
+  override def processElement(i: DeparturesArrivalsAggResult, context: KeyedProcessFunction[String, DeparturesArrivalsAggResult, DeparturesArrivalsAggResult]#Context, collector: Collector[DeparturesArrivalsAggResult]): Unit = {
 
     val new_arrivals_count = g_arrivals_count.value + i.arrivals_count.toInt
     val new_departures_count = g_departures_count.value + i.departures_count.toInt
@@ -23,7 +23,7 @@ class MyProcessFunction extends KeyedProcessFunction[String, MyAggResult, MyAggR
     g_arriving_ppl_count.update(new_arriving_ppl_count)
     g_departing_ppl_count.update(new_departing_ppl_count)
 
-    collector.collect(MyAggResult(
+    collector.collect(DeparturesArrivalsAggResult(
       i.hour,
       i.borough,
       i.day,
