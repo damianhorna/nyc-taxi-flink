@@ -63,7 +63,7 @@ object DeparturesArrivalsCount {
       keyBy(mar => mar.borough + mar.day).
       process(new StatefulAccumulationKeyedProcessFun)
 
-        finalDS.print().setParallelism(1)
+//        finalDS.print().setParallelism(1)
 
     val anomalyDS: DataStream[AnomalyAggResult] = wTaWTripEventsDS.
       keyBy(te => te.borough + te.day).
@@ -74,7 +74,7 @@ object DeparturesArrivalsCount {
       process(new AnomalyProcessWindowFun).
       filter(aag => aag.diff > L.toInt)
 
-//    anomalyDS.print().setParallelism(1)
+    anomalyDS.print().setParallelism(1)
 
 
     env.execute("Socket Window WordCount")
