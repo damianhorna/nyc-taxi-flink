@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="176eb075-f168-4421-b727-cfba6cbc6fb7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/flink-streaming/src/DeparturesArrivalsCount.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-streaming/src/DeparturesArrivalsCount.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-streaming/src/MyAggFun.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-streaming/src/DeparturesArrivalsAggFun.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-streaming/src/MyAggResult.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-streaming/src/DeparturesArrivalsAggResult.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-streaming/src/MyProcessFunction.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-streaming/src/StatefulAccumulationKeyedProcessFun.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-streaming/src/TripEvent.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-streaming/src/TripEvent.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +101,7 @@
       <workItem from="1586682422842" duration="10816000" />
       <workItem from="1586729743734" duration="829000" />
       <workItem from="1586730597508" duration="11195000" />
-      <workItem from="1586774515198" duration="35234000" />
+      <workItem from="1586774515198" duration="35370000" />
     </task>
     <servers />
   </component>
@@ -153,22 +150,22 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2663" y="290" width="424" height="484" key="FileChooserDialogImpl/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586729865954" />
-    <state width="932" height="437" key="GridCell.Tab.0.bottom" timestamp="1586824272348">
+    <state width="932" height="320" key="GridCell.Tab.0.bottom" timestamp="1586824446534">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="932" height="437" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586824272348" />
-    <state width="932" height="437" key="GridCell.Tab.0.center" timestamp="1586824272348">
+    <state width="932" height="320" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586824446534" />
+    <state width="932" height="320" key="GridCell.Tab.0.center" timestamp="1586824446534">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="932" height="437" key="GridCell.Tab.0.center/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586824272348" />
-    <state width="932" height="437" key="GridCell.Tab.0.left" timestamp="1586824272347">
+    <state width="932" height="320" key="GridCell.Tab.0.center/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586824446534" />
+    <state width="932" height="320" key="GridCell.Tab.0.left" timestamp="1586824446534">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="932" height="437" key="GridCell.Tab.0.left/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586824272347" />
-    <state width="932" height="437" key="GridCell.Tab.0.right" timestamp="1586824272348">
+    <state width="932" height="320" key="GridCell.Tab.0.left/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586824446534" />
+    <state width="932" height="320" key="GridCell.Tab.0.right" timestamp="1586824446534">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="932" height="437" key="GridCell.Tab.0.right/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586824272348" />
+    <state width="932" height="320" key="GridCell.Tab.0.right/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586824446534" />
     <state width="937" height="260" key="GridCell.Tab.1.bottom" timestamp="1586802531536">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -193,10 +190,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2369" y="167" width="1024" height="845" key="SettingsEditor/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586802045895" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1586824429430">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1586824553978">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586824429430" />
+    <state width="498" height="446" key="SwitcherDM/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586824553978" />
     <state x="2553" y="483" width="636" height="229" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1586763610913">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>

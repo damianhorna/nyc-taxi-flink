@@ -15,7 +15,7 @@ class DeparturesArrivalsAggFun extends AggregateFunction[
         parse(value.timestamp).
         formatted("%tk") else accumulator.hour,
       if (accumulator.borough.isEmpty) value.borough else accumulator.borough,
-      if (accumulator.day.isEmpty) new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'").parse(value.timestamp).formatted("%tF") else accumulator.day,
+      if (accumulator.day.isEmpty) value.day else accumulator.day,
       if (value.start_stop == 1) accumulator.arrivals_count + 1 else accumulator.arrivals_count,
       if (value.start_stop == 0) accumulator.departures_count + 1 else accumulator.departures_count,
       if (value.start_stop == 1) accumulator.arriving_ppl_count + value.passenger_count else accumulator.arriving_ppl_count,

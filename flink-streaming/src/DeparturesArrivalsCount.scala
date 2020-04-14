@@ -56,6 +56,7 @@ object DeparturesArrivalsCount {
           arr(0).toInt,
           arr(1).toInt,
           arr(2),
+          new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'").parse(arr(2)).formatted("%tF"),
           arr(3).toInt,
           boroughLookup(arr(3))._1.toString,
           arr(4).toInt,
@@ -70,7 +71,7 @@ object DeparturesArrivalsCount {
 
     //    wTaWTripEventsDS.print().setParallelism(1)
     val finalDS: DataStream[DeparturesArrivalsAggResult] = wTaWTripEventsDS.
-      keyBy(te => te.borough + new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'").parse(te.timestamp).formatted("%tF")).
+      keyBy(te => te.borough + te.day).
       window(TumblingEventTimeWindows.of(Time.hours(1))).
       aggregate(new DeparturesArrivalsAggFun).
       keyBy(mar => mar.borough + mar.day).
