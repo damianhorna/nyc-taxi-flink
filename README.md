@@ -37,3 +37,5 @@ Run Kafka producer:
 ```
 java -cp /usr/lib/kafka/libs/*:KafkaProducer.jar  com.example.bigdata.TestProducer data/yellow_tripdata_result/ 5 testTopic  0 localhost:9092
 ```
+
+Open http://localhost:5601/ for Kibana.

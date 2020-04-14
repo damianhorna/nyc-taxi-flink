@@ -11,7 +11,7 @@ import org.apache.flink.streaming.api.windowing.time.Time
 import org.apache.flink.streaming.connectors.elasticsearch7.ElasticsearchSink
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer
 import org.apache.http.HttpHost
-import sink.ElasticSystemImageSink
+import sink.{ElasticAnomalySink, ElasticSystemImageSink}
 import utils.CsvReader
 
 import scala.collection.mutable
@@ -66,7 +66,7 @@ object DeparturesArrivalsCount {
       keyBy(mar => mar.borough + mar.day).
       process(new StatefulAccumulationKeyedProcessFun)
 
-    finalDS.print().setParallelism(1)
+//    finalDS.print().setParallelism(1)
 
     val anomalyDS: DataStream[AnomalyAggResult] = wTaWTripEventsDS.
       keyBy(te => te.borough + te.day).
@@ -87,11 +87,17 @@ object DeparturesArrivalsCount {
       new ElasticSystemImageSink
     )
 
+    val esSinkAnomalyBuilder = new ElasticsearchSink.Builder[AnomalyAggResult](
+      httpHosts,
+      new ElasticAnomalySink
+    )
+
     esSinkBuilder.setBulkFlushMaxActions(1)
+    esSinkAnomalyBuilder.setBulkFlushMaxActions(1)
 
     // finally, build and add the sink to the job's pipeline
-    //    finalDS.addSink(esSinkBuilder.build)
-
+    finalDS.addSink(esSinkBuilder.build)
+    anomalyDS.addSink(esSinkAnomalyBuilder.build)
 
     env.execute("Socket Window WordCount")
   }
