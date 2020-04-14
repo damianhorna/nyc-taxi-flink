@@ -7,7 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="176eb075-f168-4421-b727-cfba6cbc6fb7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/flink-streaming/src/sink/ElasticAnomalySink.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-streaming/src/sink/ElasticAnomalySink.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +109,7 @@
       <workItem from="1586730597508" duration="11195000" />
       <workItem from="1586774515198" duration="53705000" />
       <workItem from="1586866885327" duration="5000" />
-      <workItem from="1586867112464" duration="6431000" />
+      <workItem from="1586867112464" duration="6642000" />
     </task>
     <servers />
   </component>
