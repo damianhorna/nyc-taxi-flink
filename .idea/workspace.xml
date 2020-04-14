@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="176eb075-f168-4421-b727-cfba6cbc6fb7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_apache_flink_flink_connector_elasticsearch7_2_11_1_10_0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-streaming/flink-streaming.iml" beforeDir="false" afterPath="$PROJECT_DIR$/flink-streaming/flink-streaming.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flink-streaming/src/DeparturesArrivalsCount.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-streaming/src/DeparturesArrivalsCount.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/how_to_elasticsearch.md" beforeDir="false" afterPath="$PROJECT_DIR$/how_to_elasticsearch.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +106,7 @@
       <workItem from="1586682422842" duration="10816000" />
       <workItem from="1586729743734" duration="829000" />
       <workItem from="1586730597508" duration="11195000" />
-      <workItem from="1586774515198" duration="48059000" />
+      <workItem from="1586774515198" duration="53250000" />
     </task>
     <servers />
   </component>
@@ -140,14 +143,14 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2688" y="239" width="368" height="585" key="#com.intellij.ide.util.MemberChooser/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586850460849" />
-    <state x="2714" y="344" width="439" height="490" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1586763618538">
+    <state x="2714" y="344" width="498" height="490" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1586861108248">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2714" y="344" width="439" height="490" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586763618538" />
-    <state x="2614" y="347" width="524" height="484" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog" timestamp="1586763620104">
+    <state x="2714" y="344" width="498" height="490" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586861108248" />
+    <state x="2614" y="347" width="524" height="484" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog" timestamp="1586861109449">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2614" y="347" width="524" height="484" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586763620104" />
+    <state x="2614" y="347" width="524" height="484" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586861109449" />
     <state x="2638" y="276" width="863" height="536" key="#xdebugger.evaluate" timestamp="1586845180310">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -156,22 +159,22 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2663" y="290" width="424" height="484" key="FileChooserDialogImpl/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586729865954" />
-    <state width="939" height="372" key="GridCell.Tab.0.bottom" timestamp="1586855830305">
+    <state width="939" height="372" key="GridCell.Tab.0.bottom" timestamp="1586856300580">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="939" height="372" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586855830305" />
-    <state width="939" height="372" key="GridCell.Tab.0.center" timestamp="1586855830305">
+    <state width="939" height="372" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586856300580" />
+    <state width="939" height="372" key="GridCell.Tab.0.center" timestamp="1586856300580">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="939" height="372" key="GridCell.Tab.0.center/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586855830305" />
-    <state width="939" height="372" key="GridCell.Tab.0.left" timestamp="1586855830305">
+    <state width="939" height="372" key="GridCell.Tab.0.center/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586856300580" />
+    <state width="939" height="372" key="GridCell.Tab.0.left" timestamp="1586856300580">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="939" height="372" key="GridCell.Tab.0.left/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586855830304" />
-    <state width="939" height="372" key="GridCell.Tab.0.right" timestamp="1586855830305">
+    <state width="939" height="372" key="GridCell.Tab.0.left/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586856300580" />
+    <state width="939" height="372" key="GridCell.Tab.0.right" timestamp="1586856300580">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="939" height="372" key="GridCell.Tab.0.right/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586855830305" />
+    <state width="939" height="372" key="GridCell.Tab.0.right/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586856300580" />
     <state width="937" height="260" key="GridCell.Tab.1.bottom" timestamp="1586850397629">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -192,18 +195,18 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2466" y="336" width="878" height="507" key="NewModule_or_Project.wizard/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586729867088" />
-    <state x="2369" y="167" width="1024" height="845" key="SettingsEditor" timestamp="1586854580643">
+    <state x="2369" y="167" width="1024" height="845" key="SettingsEditor" timestamp="1586865283386">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2369" y="167" width="1024" height="845" key="SettingsEditor/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586854580643" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1586854689002">
+    <state x="2369" y="167" width="1024" height="845" key="SettingsEditor/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586865283386" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1586865612181">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586854689002" />
-    <state x="2553" y="483" width="636" height="229" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1586763610913">
+    <state width="498" height="446" key="SwitcherDM/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586865612181" />
+    <state x="2553" y="483" width="636" height="229" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1586861079290">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2553" y="483" width="636" height="229" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586763610913" />
+    <state x="2553" y="483" width="636" height="229" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/1920.0.1920.1080/0.267.1920.1080@1920.0.1920.1080" timestamp="1586861079290" />
     <state x="2494" y="182" width="762" height="700" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1586732582764">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -243,12 +246,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/flink-streaming/src/DeparturesArrivalsCount.scala</url>
-          <line>54</line>
+          <line>60</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/flink-streaming/src/DeparturesArrivalsCount.scala</url>
-          <line>20</line>
+          <line>26</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
