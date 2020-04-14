@@ -49,6 +49,10 @@ object DeparturesArrivalsCount {
 
     //    text.print().setParallelism(1)
 
+    val sdf = new SimpleDateFormat("yyyy-MM-dd")
+    val startDate = sdf.parse("2018-11-01")
+    val endDate = sdf.parse("2018-12-31")
+
     val tripEventsDS: org.apache.flink.streaming.api.scala.DataStream[TripEvent] =
       text.filter(s => !s.startsWith("event_type")).
         map(_.split(",")).
@@ -66,7 +70,9 @@ object DeparturesArrivalsCount {
           arr(6).toInt,
           arr(7).toDouble,
           arr(8).toInt
-        ))
+        )).filter(te =>
+        (sdf.parse(te.day).compareTo(startDate) >= 0) &&
+          sdf.parse(te.day).compareTo(endDate) <= 0)
 
     val wTaWTripEventsDS: DataStream[TripEvent] = tripEventsDS.
       assignTimestampsAndWatermarks(new BoundedOutOfOrdernessGenerator())
@@ -75,21 +81,22 @@ object DeparturesArrivalsCount {
     val finalDS: DataStream[DeparturesArrivalsAggResult] = wTaWTripEventsDS.
       keyBy(te => te.borough +":"+ te.day).
       window(TumblingEventTimeWindows.of(Time.hours(1))).
-      process(new DepArrProcWindFun).
+      aggregate(new DeparturesArrivalsAggFun).
       keyBy(mar => mar.borough + mar.day).
       process(new StatefulAccumulationKeyedProcessFun)
 
-    finalDS.print().setParallelism(1)
+//    finalDS.print().setParallelism(1)
 
-//    val anomalyDS =  wTaWTripEventsDS.
-//      keyBy(te => te.borough + te.day).
-//      window(TumblingEventTimeWindows.of(Time.hours(1))).
-//      aggregate(new DeparturesArrivalsAggFun).
-//      keyBy(mar => mar.borough).
-//      window(SlidingEventTimeWindows.of(Time.hours(D.toInt), Time.hours(1))).
-//      process(new AnomalyProcessWindowFun)
-//
-//    anomalyDS.print().setParallelism(1)
+    val anomalyDS: DataStream[AnomalyAggResult] =  wTaWTripEventsDS.
+      keyBy(te => te.borough + te.day).
+      window(TumblingEventTimeWindows.of(Time.hours(1))).
+      aggregate(new DeparturesArrivalsAggFun).
+      keyBy(mar => mar.borough).
+      window(SlidingEventTimeWindows.of(Time.hours(D.toInt), Time.hours(1))).
+      process(new AnomalyProcessWindowFun)
+//      filter(aag => aag.diff > L.toInt)
+
+    anomalyDS.print().setParallelism(1)
 
 
     env.execute("Socket Window WordCount")
