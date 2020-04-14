@@ -98,6 +98,8 @@ object DeparturesArrivalsCount {
     // finally, build and add the sink to the job's pipeline
     finalDS.addSink(esSinkBuilder.build)
     anomalyDS.addSink(esSinkAnomalyBuilder.build)
+//    finalDS.print().setParallelism(1)
+//    anomalyDS.print().setParallelism(1)
 
     env.execute("Socket Window WordCount")
   }

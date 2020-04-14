@@ -19,7 +19,7 @@ class ElasticSystemImageSink extends ElasticsearchSinkFunction[DeparturesArrival
     json.put("departing_people_count", element.departingPeopleCnt)
 
     val rqst: IndexRequest = Requests.indexRequest
-      .index("nyc-idx")
+      .index("nyc-state")
       .source(json)
 
     indexer.add(rqst)

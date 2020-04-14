@@ -18,7 +18,7 @@ class ElasticAnomalySink extends ElasticsearchSinkFunction[AnomalyAggResult] {
     json.put("diff", element.diff)
 
     val rqst: IndexRequest = Requests.indexRequest
-      .index("nyc-idx")
+      .index("nyc-anomaly")
       .source(json)
 
     indexer.add(rqst)
