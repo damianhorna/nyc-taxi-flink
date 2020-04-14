@@ -3,14 +3,50 @@ import java.util.Properties
 
 import org.apache.flink.api.common.restartstrategy.RestartStrategies
 import org.apache.flink.api.common.serialization.SimpleStringSchema
+import org.apache.flink.api.common.state.{ValueState, ValueStateDescriptor}
+import org.apache.flink.configuration.Configuration
 import org.apache.flink.streaming.api.TimeCharacteristic
+import org.apache.flink.streaming.api.functions.KeyedProcessFunction
 import org.apache.flink.streaming.api.scala._
-import org.apache.flink.streaming.api.windowing.assigners.{TumblingEventTimeWindows, TumblingProcessingTimeWindows}
+import org.apache.flink.streaming.api.windowing.assigners.TumblingEventTimeWindows
 import org.apache.flink.streaming.api.windowing.time.Time
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer
+import org.apache.flink.util.Collector
 
 import scala.collection.mutable
 
+
+class MyProcessFunction extends KeyedProcessFunction[String, MyAggResult, MyAggResult] {
+
+  private var acc: ValueState[Int] = _
+
+  override def processElement(i: MyAggResult, context: KeyedProcessFunction[String, MyAggResult, MyAggResult]#Context, collector: Collector[MyAggResult]): Unit = {
+    var tmpAcc = 0
+    try{
+      tmpAcc = acc.value
+    } catch {
+      case x: NullPointerException => tmpAcc = 0
+    }
+
+    val newAcc = tmpAcc + i.arrivals_count.toInt
+    acc.update(newAcc)
+    collector.collect(new MyAggResult(
+      i.hour,
+      i.borough,
+      i.day,
+      newAcc,
+      i.departures_count,
+      i.arriving_ppl_count,
+      i.departing_ppl_count
+    ))
+  }
+
+  override def open(parameters: Configuration): Unit = {
+    acc = getRuntimeContext.getState(
+      new ValueStateDescriptor[(Int)]("acc", createTypeInformation[(Int)])
+    )
+  }
+}
 
 object DeparturesArrivalsCount {
 
@@ -46,7 +82,7 @@ object DeparturesArrivalsCount {
     val text: DataStream[String] = env
       .addSource(new FlinkKafkaConsumer[String]("testTopic", new SimpleStringSchema(), properties))
 
-//    text.print().setParallelism(1)
+    //    text.print().setParallelism(1)
 
     val tripEventsDS: org.apache.flink.streaming.api.scala.DataStream[TripEvent] =
       text.filter(s => !s.startsWith("event_type")).
@@ -69,11 +105,13 @@ object DeparturesArrivalsCount {
     val wTaWTripEventsDS: DataStream[TripEvent] = tripEventsDS.
       assignTimestampsAndWatermarks(new BoundedOutOfOrdernessGenerator())
 
-//    wTaWTripEventsDS.print().setParallelism(1)
-    val finalDS = wTaWTripEventsDS.
+    //    wTaWTripEventsDS.print().setParallelism(1)
+    val finalDS: DataStream[MyAggResult] = wTaWTripEventsDS.
       keyBy(te => te.borough + new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'").parse(te.timestamp).formatted("%tF")).
-      window(TumblingEventTimeWindows.of(Time.seconds(10))).
-      aggregate(new MyAggFun)
+      window(TumblingEventTimeWindows.of(Time.hours(1))).
+      aggregate(new MyAggFun).
+      keyBy(mar => mar.borough + mar.day).
+      process(new MyProcessFunction)
 
     finalDS.print().setParallelism(1)
 
