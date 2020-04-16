@@ -12,6 +12,8 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="flink-streaming" target="1.8" />
+      <module name="flink-streaming (1)" target="1.5" />
+      <module name="flink-streaming (2)" target="1.8" />
       <module name="flink-streaming-demo" target="1.6" />
     </bytecodeTargetLevel>
   </component>
