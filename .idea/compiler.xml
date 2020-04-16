@@ -7,9 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="flink-streaming-demo" />
+        <module name="flink-streaming" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="flink-streaming" target="1.8" />
       <module name="flink-streaming-demo" target="1.6" />
     </bytecodeTargetLevel>
   </component>

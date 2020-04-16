@@ -1,3 +1,5 @@
+package com.bigdata
+
 import java.text.SimpleDateFormat
 import java.util.Properties
 
@@ -5,7 +7,7 @@ import datatypes.{AnomalyAggResult, DeparturesArrivalsAggResult, TripEvent}
 import org.apache.flink.api.common.restartstrategy.RestartStrategies
 import org.apache.flink.api.common.serialization.SimpleStringSchema
 import org.apache.flink.streaming.api.TimeCharacteristic
-import org.apache.flink.streaming.api.scala._
+import org.apache.flink.streaming.api.scala.{DataStream, StreamExecutionEnvironment}
 import org.apache.flink.streaming.api.windowing.assigners.{SlidingEventTimeWindows, TumblingEventTimeWindows}
 import org.apache.flink.streaming.api.windowing.time.Time
 import org.apache.flink.streaming.connectors.elasticsearch7.ElasticsearchSink
@@ -13,6 +15,7 @@ import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer
 import org.apache.http.HttpHost
 import sink.{ElasticAnomalySink, ElasticSystemImageSink}
 import utils.CsvReader
+import org.apache.flink.api.scala._
 
 import scala.collection.mutable
 
@@ -96,9 +99,9 @@ object DeparturesArrivalsCount {
     esSinkAnomalyBuilder.setBulkFlushMaxActions(1)
 
     // finally, build and add the sink to the job's pipeline
-    finalDS.addSink(esSinkBuilder.build)
-    anomalyDS.addSink(esSinkAnomalyBuilder.build)
-//    finalDS.print().setParallelism(1)
+//    finalDS.addSink(esSinkBuilder.build)
+//    anomalyDS.addSink(esSinkAnomalyBuilder.build)
+    finalDS.print().setParallelism(1)
 //    anomalyDS.print().setParallelism(1)
 
     env.execute("Socket Window WordCount")
@@ -108,4 +111,3 @@ object DeparturesArrivalsCount {
   case class WordWithCount(word: String, count: Long)
 
 }
-

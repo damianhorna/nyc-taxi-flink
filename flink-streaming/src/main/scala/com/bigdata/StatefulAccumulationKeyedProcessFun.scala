@@ -1,3 +1,5 @@
+package com.bigdata
+
 import datatypes.DeparturesArrivalsAggResult
 import org.apache.flink.api.common.state.{ValueState, ValueStateDescriptor}
 import org.apache.flink.configuration.Configuration

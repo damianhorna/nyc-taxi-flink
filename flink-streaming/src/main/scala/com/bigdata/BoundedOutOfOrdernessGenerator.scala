@@ -1,9 +1,12 @@
-import scala.math.max
+package com.bigdata
+
 import java.text.SimpleDateFormat
 
 import datatypes.TripEvent
 import org.apache.flink.streaming.api.functions.AssignerWithPeriodicWatermarks
 import org.apache.flink.streaming.api.watermark.Watermark
+
+import scala.math.max
 
 class BoundedOutOfOrdernessGenerator extends AssignerWithPeriodicWatermarks[TripEvent] {
   def getTimestamp(s: String): Long = {

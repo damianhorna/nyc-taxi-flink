@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="com.typesafe.akka:akka-protobuf_2.11:2.5.21" type="repository">
+    <properties maven-id="com.typesafe.akka:akka-protobuf_2.11:2.5.21" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/typesafe/akka/akka-protobuf_2.11/2.5.21/akka-protobuf_2.11-2.5.21.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/scala-lang/scala-library/2.11.12/scala-library-2.11.12.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

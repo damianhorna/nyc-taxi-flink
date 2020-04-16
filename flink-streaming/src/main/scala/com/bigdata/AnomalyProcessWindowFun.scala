@@ -1,3 +1,5 @@
+package com.bigdata
+
 import java.text.SimpleDateFormat
 import java.util.Date
 
