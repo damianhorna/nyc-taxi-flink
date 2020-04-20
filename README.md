@@ -1,6 +1,6 @@
 # nyc-taxi-flink
 
-![kibana-ss](new-york-map.png)
+![diagram](diagram.png)
 
 1. Download data:
 ```
@@ -41,3 +41,5 @@ java -cp /usr/lib/kafka/libs/*:KafkaProducer.jar  com.example.bigdata.TestProduc
 ```
 
 Open http://localhost:5601/ for Kibana.
+
+![kibana-ss](new-york-map.png)
