@@ -1,5 +1,7 @@
 # nyc-taxi-flink
 
+![kibana-ss](new-york-map.png)
+
 1. Download data:
 ```
 cd data

@@ -1,3 +1,4 @@
 data
 flink-streaming/target
 out
+.idea
